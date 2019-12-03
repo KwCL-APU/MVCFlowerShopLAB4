@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Upload File Page";
+}
+
+<center>
+    <h1>@ViewData["Title"]</h1>
+    <br />
+
+    <div class="row">
+        <section>
+            <!--method = always going how you send the object-->
+            <!--ectype = mention what kind of object you send-->
+            <!--asp-controller = which controller action you want to proceed the action-->
+            <!--asp-action = which destination page you want to go-->
+            <form method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index"></form>
+
+        </section>
+    </div>
+
+
+</center>
