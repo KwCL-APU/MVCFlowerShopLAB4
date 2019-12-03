@@ -21,6 +21,17 @@ namespace MVCFlowerShop.Controllers
 
             long sizes = files.Sum(f => f.Length);
             var filepath = Path.GetTempFileName();
+            int i = 1; string contents = "";
+
+            foreach(var FormFile in files)
+            {
+                //step 1: before pass the file, check the file content type
+                if(FormFile.ContentType.ToLower() != "text/plain")
+                {
+                    return BadRequest("The " + Path.GetFileName(filepath) +
+                        "is not a text file! Please upload a correct text file");
+                }
+            }
             return RedirectToAction("Index");
 
         }
